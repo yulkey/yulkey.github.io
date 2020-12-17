@@ -5,14 +5,14 @@
     
 <meta charset="utf-8" >
 
-<title>MyBatis(一)：总览 | 渊塬的笔记本</title>
+<title>MyBatis快速入门(一)：总览 | 渊塬的笔记本</title>
 <meta name="description" content="在深渊中发现一片原野">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://yulkey.github.io/favicon.ico?v=1608192546167">
+<link rel="shortcut icon" href="https://yulkey.github.io/favicon.ico?v=1608212686302">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://yulkey.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://yulkey.github.io">
-        <img class="avatar" src="https://yulkey.github.io/images/avatar.png?v=1608192546167" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://yulkey.github.io/images/avatar.png?v=1608212686302" alt="" width="32px" height="32px">
       </a>
       <a href="https://yulkey.github.io">
         <h1 class="site-title">渊塬的笔记本</h1>
@@ -83,7 +83,7 @@
             <div class="feature-container" style="background-image: url('https://yulkey.github.io/post-images/mybatisyi-zong-lan.png')">
             </div>
           
-          <h2 class="post-title">MyBatis(一)：总览</h2>
+          <h2 class="post-title">MyBatis快速入门(一)：总览</h2>
           <div class="post-info post-detail-info">
             <span><i class="icon-calendar-outline"></i> 2020-12-17</span>
             
@@ -119,6 +119,9 @@
 <li>工作：配置和映射 <strong>原始类型、接口、Java POJO</strong> 为 <strong>数据库中的记录</strong></li>
 <li>本质：是一款<strong>持久层框架</strong></li>
 </ul>
+<p>实现说明，该笔记旨在让对MyBatis毫无了解的人快速了解大致的框架，以及如何使用<br>
+同时，也是为了避免头昏脑胀抓不住重点，文章也会避免大量代码的出现，在大部分基础配置讲完后，才会有专门章节来讲述实际在JAVA中的使用过程，所以请将这系列的文章当作引导来看，而非正经严肃的教程</p>
+<p>详细的请务必到 <a href="https://mybatis.org/">MyBatis文档</a> 仔细查看</p>
 <h2 id="jdbc">JDBC</h2>
 <p>如果我们不使用MyBatis，而是使用原生JDBC</p>
 <p>我们需要做什么？</p>
@@ -135,9 +138,9 @@
 <p>如果我们使用MyBatis呢？</p>
 <p>看不懂没关系，有个大体映像就好</p>
 <ol>
-<li>构建SqlSessionFactory</li>
-<li>从SqlSessionFactory中获得Session</li>
-<li>通过已经配置好的命令，从Session中获取从数据库中获取的需要的对象</li>
+<li>通过 SQLSessionBuilder 获取 SqlSessionFactory</li>
+<li>从 SqlSessionFactory 中获得 Session</li>
+<li>从Session中通过调用已经配置好的命令，获取从数据库中获取的需要的对象</li>
 </ol>
 <p>是不是简单明快的多了？</p>
 <p>所以我们需要学习的内容基本上就以下几个</p>
@@ -158,7 +161,19 @@
 </ol>
 </li>
 </ol>
-<p>实际上可以这么说，学习使用MyBatis就是学习怎么配置文件</p>
+<p>实际上可以这么说，学习使用MyBatis就是学习怎么配置文件<br>
+而我们需要配置的文件基本上就两种</p>
+<ol>
+<li>全局的配置文件</li>
+<li>配置映射的文件，mapper</li>
+</ol>
+<p>尽管网络上看起来需要配置的很多很复杂<br>
+但其实全局配置文件我们一般需要配置的就两种</p>
+<ol>
+<li>properties 方便重用与修改</li>
+<li>environments 配置连接到数据库所必须的环境变量</li>
+</ol>
+<p>其余的都是相对来讲都比较细枝末节的东西</p>
 
           </div>
         </div>
