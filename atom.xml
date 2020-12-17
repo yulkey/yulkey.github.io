@@ -1,13 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yulkey.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-12-17T06:32:15.715Z</updated>
+    <title>渊塬的笔记本</title>
+    <updated>2020-12-17T08:10:11.522Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yulkey.github.io"/>
     <link rel="self" href="https://yulkey.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>在深渊中发现一片原野</subtitle>
     <logo>https://yulkey.github.io/images/avatar.png</logo>
     <icon>https://yulkey.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, 渊塬的笔记本</rights>
+    <entry>
+        <title type="html"><![CDATA[MyBatis(一)：总览]]></title>
+        <id>https://yulkey.github.io/post/mybatisyi-zong-lan/</id>
+        <link href="https://yulkey.github.io/post/mybatisyi-zong-lan/">
+        </link>
+        <updated>2020-12-17T06:32:43.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>MyBatis 是一款优秀的持久层框架，它支持自定义 SQL、存储过程以及高级映射</p>
+<p>MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作</p>
+<p>MyBatis 可以通过简单的 XML 或注解来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录</p>
+</blockquote>
+<p>以上内容摘自 <a href="https://mybatis.org/">MyBatis文档</a></p>
+<p>就如上面所说，MyBatis是一个工具</p>
+<ul>
+<li>目的：免除JDBC代码，以及设置参数和获取结果集的工作</li>
+<li>途径：通过简单的<strong>XML或注解</strong></li>
+<li>工作：配置和映射 <strong>原始类型、接口、Java POJO</strong> 为 <strong>数据库中的记录</strong></li>
+<li>本质：是一款<strong>持久层框架</strong></li>
+</ul>
+<h2 id="jdbc">JDBC</h2>
+<p>如果我们不使用MyBatis，而是使用原生JDBC</p>
+<p>我们需要做什么？</p>
+<ol>
+<li><code>Class.forName(&quot;com.mysql.jdbc.Driver&quot;)</code> <strong>加载驱动</strong></li>
+<li><code>DriverManager.getConnection(&quot;jdbc:mysql://127.0.0.1:3306/db&quot;, &quot;root&quot;, &quot;root&quot;);</code> <strong>获取Connection</strong></li>
+<li><code>conn.createStatement();</code><strong>从Connection获取Statement对象</strong></li>
+<li><code>ResultSet rs = stmt.executeQuery(&quot;SELECT * FROM TABLE&quot;);</code> <strong>执行语句获取ResultSet</strong></li>
+<li>遍历结果集以获取需要的数据</li>
+<li>一一关闭上面的对象</li>
+</ol>
+<p>是不是很复杂？</p>
+<h2 id="mybatis">MyBatis</h2>
+<p>如果我们使用MyBatis呢？</p>
+<p>看不懂没关系，有个大体映像就好</p>
+<ol>
+<li>构建SqlSessionFactory</li>
+<li>从SqlSessionFactory中获得Session</li>
+<li>通过已经配置好的命令，从Session中获取从数据库中获取的需要的对象</li>
+</ol>
+<p>是不是简单明快的多了？</p>
+<p>所以我们需要学习的内容基本上就以下几个</p>
+<ol>
+<li>如何构建SqlSessionFactory
+<ol>
+<li>相当于JDBC的1、2步</li>
+</ol>
+</li>
+<li>如何获得与使用Session
+<ol>
+<li>相当于3、4步</li>
+</ol>
+</li>
+<li>如何建立配置好的命令与映射
+<ol>
+<li>相当于第5步</li>
+</ol>
+</li>
+</ol>
+<p>实际上可以这么说，学习使用MyBatis就是学习怎么配置文件</p>
+]]></content>
+    </entry>
 </feed>
